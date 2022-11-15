@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {Arrivals} from './components/Arrivals'
 
 function App() {
   return (
