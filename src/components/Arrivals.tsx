@@ -1,26 +1,8 @@
-import React from 'react';
-import {Products} from './Products';
-
-
-type EarningsType = {
-    earning: ArrivalsType["earnings"]
-    status: ArrivalsType["eStatus"]
-}
-type CommissionType = {
-    commission: ArrivalsType["commission"]
-    status: ArrivalsType["cStatus"]
-}
-type CompanyType = {
-    companyTitle: ArrivalsType["company"]
-    structure: ArrivalsType["structure"]
-}
-type RatingType = {
-    estimation: ArrivalsType["rating"]
-    title: ArrivalsType["ratingTitle"]
-}
+import React, {useState} from 'react';
+import './../App.css'
 
 export type ArrivalsType = {
-    id: number
+    id?: number
     avatar: string
     name: string
     technologies: string
@@ -32,82 +14,53 @@ export type ArrivalsType = {
     structure: string
     rating: string
     ratingTitle: string
+    handleDeleteClick: (arrivalId: number) => void
+
+}
+type TypeProps = {
+    arrivals: Array<ArrivalsType>
+
 }
 
+// @ts-ignore
+export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => {
 
-const Message = (props: MessageTypeProps) => {
+    const [show, setShow] = useState(false)
+
     return (
-        <div className={s.dialog}>{props.message}</div>
+        <tr>
+            <td className={'people'}>
+                <td><img className={'avatar'} id={'a'} src={arrival.avatar} alt={'avatar_logo'}/></td>
+                <td><strong>{arrival.name}</strong><br/>
+                    {arrival.technologies}</td>
+            </td>
+            <td>
+                <strong>{arrival.earnings}</strong><br/>
+                {arrival.eStatus}<br/>
+            </td>
+            <td>
+                <strong>$ {arrival.commission}</strong><br/>
+                {arrival.cStatus}<br/>
+            </td>
+            <td>
+                <strong>{arrival.company}</strong><br/>
+                {arrival.structure}<br/>
+            </td>
+            <td>
+                {arrival.rating}<br/>
+                {arrival.ratingTitle}<br/>
+            </td>
+            <td>
+                <button type="button" className={'viewButton'}
+                        onClick={() => setShow(!show)}>{show ? "View Offer" : "View Offer"}</button>
+                {show &&
+                    <div className='view'>
+                        <button type="button" onClick={() => handleDuplicateClick(arrival._id)} id={'btnDup'}>Duplicate</button>
+                        <br/>
+                        <button type="button" onClick={() => handleDeleteClick(arrival._id)} id={'btnDel'}>Delete Task</button>
+                    </div>
+                }
+            </td>
+        </tr>
     )
 }
-
-export const Arrivals = (props: ArrivalsType[]) => {
-
-    let arrivals: ArrivalsType[] =
-        [
-            {
-                id: 1,
-                avatar: '$',
-                name: 'Brad Simmons',
-                technologies: 'HTML, JS, React JS',
-                earnings: '$8 000 000',
-                eStatus: 'In Proccess',
-                commission: '$520',
-                cStatus: 'Paid',
-                company: 'Interico',
-                structure: 'Web, UI/UX Design',
-                rating: '5',
-                ratingTitle: 'Best Rated'
-            },
-            {
-                id: 2,
-                avatar: '$',
-                name: 'Jessie Clarcson',
-                technologies: 'C#, ASP.NET',
-                earnings: '$23 000 000',
-                eStatus: 'Pending',
-                commission: '$1600',
-                cStatus: 'Rejected',
-                company: 'Agoda',
-                structure: 'Houses & Hotels',
-                rating: '5',
-                ratingTitle: 'Best Rated'
-            },
-            {
-                id: 3,
-                avatar: '$',
-                name: 'Lebron Wayde',
-                technologies: 'PHP, Laravel,VueJS',
-                earnings: '$34 000 000',
-                eStatus: 'Paid',
-                commission: '$6700',
-                cStatus: 'Paid',
-                company: 'RoadGee',
-                structure: 'Transportation',
-                rating: '5',
-                ratingTitle: 'Best Rated'
-            },
-            {
-                id: 4,
-                avatar: '$',
-                name: 'Natali Trump',
-                technologies: 'Python, PostgreSQL, ReactJs',
-                earnings: '$2 600 000',
-                eStatus: 'Paid',
-                commission: '$14000',
-                cStatus: 'Pending',
-                company: 'The Hill',
-                structure: 'Insurance',
-                rating: '4,5',
-                ratingTitle: 'Avarage'
-            },
-        ]
-
-    return (
-        <div>
-            <table>
-                <Products />
-            </table>
-        </div>
-    );
-};
