@@ -1,3 +1,7 @@
+.content{
+    width: 1200px;
+    margin: 0 auto;
+}
 .headTable{
     background: #F2F6F9;
     font-family: "Roboto Thin", sans-serif;
@@ -10,16 +14,21 @@
     padding-right: 100px;
     color:#C8CBD0;
 }
+
 table{
     border-spacing: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    cursor:pointer;
+    caret-color: transparent;
 }
 #headProd{
     color:#5E616A;
-    width: 120px;
+    width: 200px;
 }
-.people{
-
+.text-gr{
+    color: #D0CFD4;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
 }
 #a{
     padding-right: 20px;
@@ -40,10 +49,12 @@ table{
 .viewButton{
     background: #C9F7F6;
     border: none;
-    width: 80px;
+    width: 110px;
     height: 35px;
     border-radius: 10px;
     color:#51D7C3;
+    float:right;
+    font-weight: bold;
 }
 .viewButton:hover{
     color: #C9F7F6;
@@ -60,6 +71,14 @@ table{
     border-radius: 10px;
     text-align: center;
     padding-top:10px;
+    position: fixed;
+    margin-top: 40px;
+    margin-left: -80px;
+    transition:all 1.7s ease-out;
+
+}
+.view:hover{
+    z-index:99999999;
 }
 #btnDup{
     background: #EFF3F6;
@@ -71,6 +90,11 @@ table{
     height: 40px;
     border-radius: 10px;
 }
+#btnDup:hover, #btnDel:hover{
+    background: #C9F7F6;
+    color: #292929;
+    transition: 0.7s;
+}
 #btnDel{
     background: #EFF3F6;
     border: none;
@@ -80,5 +104,36 @@ table{
     width: 180px;
     height: 40px;
     margin-bottom:10px;
+}
+.upperTable{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+}
+.upperTable h2{
+    color: #232323;
+    z-index: 6;
+}
+.upperTable p{
+    color: #C8C7CD;
+    font-weight: bold;
+    z-index: 6;
+}
+.btNR, .btC {
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-left:920px;
+    position: fixed;
+    top: 30px;
+}
+.btNR {
+    background: #319AFE;
+}
+.btC{
+    background: #F94B62;
+    margin-left:1040px;
 }

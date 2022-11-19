@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import {Arrivals} from './components/Arrivals';
 import './App.css'
 
+
 const App = () => {
     const [arrivals, setArrivals] = useState(
         [
@@ -133,7 +134,13 @@ const App = () => {
     }
 
     return (
-        <div>
+        <div className={'content'}>
+            <div className={'upperTable'}>
+                <h2>New Arrivals</h2>
+                <p>More than 400+ new members</p>
+                <button className={'btNR'}>New Report</button>
+                <button className={'btC'}>Create</button>
+            </div>
             <table>
 
                 <thead className={'headTable'}>
@@ -144,7 +151,7 @@ const App = () => {
                     <th className={'head'} id={'headComm'} onClick={() => sorting('commission')}>COMMISSION</th>
                     <th className={'head'} id={'headComp'} onClick={() => sorting('company')}>COMPANY</th>
                     <th className={'head'}>RATING</th>
-                    <th className={'head'}></th>
+                    <th className={'head'}/>
                 </tr>
                 </thead>
 
