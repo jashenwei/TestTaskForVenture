@@ -1,32 +1,16 @@
 import React, {useState} from 'react';
 import './../App.css'
-
-export type ArrivalsType = {
-    id?: number
-    avatar: string
-    name: string
-    technologies: string
-    earnings: string
-    eStatus: string
-    commission: string
-    cStatus: string
-    company: string
-    structure: string
-    rating: string
-    ratingTitle: string
-    handleDeleteClick: (arrivalId: number) => void
-
-}
-type TypeProps = {
-    arrivals: Array<ArrivalsType>
-
-}
+import { FaStar } from "react-icons/fa"
 
 // @ts-ignore
 export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => {
 
     const [show, setShow] = useState(false)
 
+    const rat = [];
+    for (let i = 0; i < arrival.rating; i++) {
+        rat[i] = (<FaStar className={'starRating'}/> );
+    }
     return (
         <tr>
             <td className={'people'}>
@@ -70,7 +54,7 @@ export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => 
                 </div>
             </td>
             <td>
-                {arrival.rating}
+                {rat}
                 <div className={'text-gr'}>
                     {arrival.ratingTitle}
                 </div>

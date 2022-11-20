@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import {Arrivals} from './components/Arrivals';
 import './App.css'
-
+import {FaStar} from 'react-icons/fa';
 
 const App = () => {
     const [arrivals, setArrivals] = useState(
@@ -17,7 +17,7 @@ const App = () => {
                 cStatus: 'Paid',
                 company: 'Interico',
                 structure: 'Web, UI/UX Design',
-                rating: '5',
+                rating: 5,
                 ratingTitle: 'Best Rated'
             },
             {
@@ -31,7 +31,7 @@ const App = () => {
                 cStatus: 'Rejected',
                 company: 'Agoda',
                 structure: 'Houses & Hotels',
-                rating: '5',
+                rating: 5,
                 ratingTitle: 'Best Rated'
             },
             {
@@ -45,7 +45,7 @@ const App = () => {
                 cStatus: 'Paid',
                 company: 'RoadGee',
                 structure: 'Transportation',
-                rating: '5',
+                rating: 5,
                 ratingTitle: 'Best Rated'
             },
             {
@@ -59,7 +59,7 @@ const App = () => {
                 cStatus: 'Pending',
                 company: 'The Hill',
                 structure: 'Insurance',
-                rating: '4,5',
+                rating: 4,
                 ratingTitle: 'Avarage'
             },
         ])
@@ -132,7 +132,7 @@ const App = () => {
         }
         setArrivals([...arrivals, arrivalTask])
     }
-
+    // @ts-ignore
     return (
         <div className={'content'}>
             <div className={'upperTable'}>
@@ -163,7 +163,6 @@ const App = () => {
                             arrival={arrival}
                             handleDeleteClick={handleDeleteClick}
                             handleDuplicateClick={handleDuplicateClick}
-
                         />
                     </Fragment>
                 ))}
