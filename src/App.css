@@ -4,7 +4,6 @@
 }
 .headTable{
     background: #F2F6F9;
-    font-family: "Roboto Thin", sans-serif;
 }
 .head{
     border: none;
@@ -13,8 +12,9 @@
     padding-top: 10px;
     padding-right: 100px;
     color:#C8CBD0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
-
 table{
     border-spacing: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -25,20 +25,8 @@ table{
     color:#5E616A;
     width: 200px;
 }
-.text-gr{
-    color: #D0CFD4;
-    font-size: 13px;
-    font-family: Arial, sans-serif;
-}
 #a{
     padding-right: 20px;
-}
-
-.avatar{
-    border-radius: 5px;
-    width: 34px;
-    height: 50px;
-    opacity: 0.7;
 }
 #headComp:hover{
     color: #5E616A;
@@ -46,68 +34,8 @@ table{
 #headComm:hover{
     color: #5E616A;
 }
-.viewButton{
-    background: #C9F7F6;
-    border: none;
-    width: 110px;
-    height: 35px;
-    border-radius: 10px;
-    color:#51D7C3;
-    float:right;
-    font-weight: bold;
-}
-.viewButton:hover{
-    color: #C9F7F6;
-    background: #51D7C3;
-    transition: 1s;
-}
-.view{
-    z-index: 1;
-    background: #FFFFFF;
-    border: 1px solid #E3E2E4;
-    width: 190px;
-    height: auto;
-    box-shadow:  0 4px 4px -1px rgba(122,122,122,0.4);
-    border-radius: 10px;
-    text-align: center;
-    padding-top:10px;
-    position: fixed;
-    margin-top: 40px;
-    margin-left: -80px;
-    transition:all 1.7s ease-out;
-
-}
-.view:hover{
-    z-index:99999999;
-}
-#btnDup{
-    background: #EFF3F6;
-    border: none;
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 10px;
-    width: 180px;
-    height: 40px;
-    border-radius: 10px;
-}
-#btnDup:hover, #btnDel:hover{
-    background: #C9F7F6;
-    color: #292929;
-    transition: 0.7s;
-}
-#btnDel{
-    background: #EFF3F6;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 15px;
-    width: 180px;
-    height: 40px;
-    margin-bottom:10px;
-}
 .upperTable{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
 }
 .upperTable h2{
     color: #232323;
@@ -136,7 +64,4 @@ table{
 .btC{
     background: #F94B62;
     margin-left:1040px;
-}
-.starRating{
-    color:#F4AE1A;
 }

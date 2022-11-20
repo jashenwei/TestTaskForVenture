@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import './../App.css'
+import './style/Arrivals.css'
 import { FaStar } from "react-icons/fa"
+import {ViewOffer} from './ViewOffer'
 
 // @ts-ignore
 export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => {
@@ -11,6 +12,7 @@ export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => 
     for (let i = 0; i < arrival.rating; i++) {
         rat[i] = (<FaStar className={'starRating'}/> );
     }
+    // @ts-ignore
     return (
         <tr>
             <td className={'people'}>
@@ -60,22 +62,12 @@ export const Arrivals = ({arrival, handleDeleteClick, handleDuplicateClick}) => 
                 </div>
             </td>
             <td>
-                <button type="button"
-                        className={'viewButton'}
-                        onClick={() => setShow(!show)}>{show ? "View Offer" : "View Offer"}</button>
-                {show &&
-                    <div className='view'>
-                        <button type="button"
-                                onClick={() => handleDuplicateClick(arrival._id)}
-                                id={'btnDup'}>Duplicate
-                        </button>
-                        <br/>
-                        <button type="button"
-                                onClick={() => handleDeleteClick(arrival._id)}
-                                id={'btnDel'}>Delete Task
-                        </button>
-                    </div>
-                }
+                {//@ts-ignore
+                <ViewOffer
+                    arrival={arrival}
+                    handleDuplicateClick={handleDuplicateClick}
+                    handleDeleteClick={handleDeleteClick}
+                />}
             </td>
         </tr>
     )

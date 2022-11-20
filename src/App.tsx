@@ -142,10 +142,8 @@ const App = () => {
                 <button className={'btC'}>Create</button>
             </div>
             <table>
-
                 <thead className={'headTable'}>
                 <tr>
-
                     <th className={'head'} id={"headProd"}>PRODUCTS</th>
                     <th className={'head'}>EARNINGS</th>
                     <th className={'head'} id={'headComm'} onClick={() => sorting('commission')}>COMMISSION</th>
@@ -158,7 +156,6 @@ const App = () => {
                 <tbody>
                 {arrivals.map((arrival) => (
                     <Fragment>
-
                         <Arrivals
                             arrival={arrival}
                             handleDeleteClick={handleDeleteClick}
